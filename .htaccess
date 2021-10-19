@@ -1,0 +1,11 @@
+RewriteEngine on
+# language starts with EN
+RewriteCond %{HTTP:Accept-Language} ^en [NC]
+RewriteRule ^$ /login.php [L,R=301]
+
+# language starts with JA
+RewriteCond %{HTTP:Accept-Language} ^ja [NC]
+RewriteRule ^$ /login-jp.php [L,R=301]
+
+# else redirect to the English version
+RewriteRule ^$ /login.php [L,R=301]
